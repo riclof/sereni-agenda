@@ -1,0 +1,82 @@
+# ─────────────────────────────────────────────────────────────────────────
+# GitHub Action — Mise à jour automatique de l'agenda seniors
+#
+# PLACEMENT : copiez ce fichier dans le dépôt de publication (ex. "sereni-agenda")
+#             à l'emplacement :  .github/workflows/update-agenda.yml
+# Le dépôt doit aussi contenir le script  nice_agenda_to_json.py  (à sa racine)
+# et avoir GitHub Pages activé (Settings → Pages → main / root).
+#
+# DEUX MODES :
+#  1) Manuel (recommandé) : onglet "Actions" → "Run workflow" → coller l'URL
+#     du PDF du mois. C'est le plus fiable car l'URL du PDF change chaque mois.
+#  2) Programmé (best-effort) : le 1er de chaque mois, utilise la variable de
+#     dépôt NICE_PDF_URL si elle est définie (Settings → Secrets and variables
+#     → Actions → Variables → NICE_PDF_URL). Sinon, le run est ignoré.
+# ─────────────────────────────────────────────────────────────────────────
+
+name: Mise à jour agenda seniors
+
+on:
+  workflow_dispatch:
+    inputs:
+      pdf_url:
+        description: "URL du PDF du programme mensuel"
+        required: true
+      year:
+        description: "Année (laisser vide = année courante)"
+        required: false
+        default: ""
+  schedule:
+    - cron: "0 6 1 * *"     # le 1er de chaque mois à 06:00 UTC
+
+permissions:
+  contents: write           # autorise le commit du JSON régénéré
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install pypdf
+
+      - name: Déterminer l'URL du PDF
+        id: src
+        run: |
+          PDF="${{ github.event.inputs.pdf_url }}"
+          if [ -z "$PDF" ]; then PDF="${{ vars.NICE_PDF_URL }}"; fi
+          if [ -z "$PDF" ]; then
+            echo "Aucune URL de PDF fournie (input ou variable NICE_PDF_URL) — arrêt."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "pdf=$PDF" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Générer le JSON
+        if: steps.src.outputs.skip != 'true'
+        run: |
+          YEAR="${{ github.event.inputs.year }}"
+          if [ -z "$YEAR" ]; then YEAR=$(date +%Y); fi
+          python nice_agenda_to_json.py --pdf "${{ steps.src.outputs.pdf }}" --year "$YEAR" --out agenda-nice.json
+          echo "----- aperçu -----"
+          head -c 600 agenda-nice.json
+
+      - name: Publier (commit + push)
+        if: steps.src.outputs.skip != 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add agenda-nice.json
+          if git diff --staged --quiet; then
+            echo "Aucun changement."
+          else
+            git commit -m "Agenda automatique $(date +%Y-%m)"
+            git push
+          fi

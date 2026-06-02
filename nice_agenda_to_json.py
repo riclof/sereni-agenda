@@ -114,6 +114,18 @@ def parse_pdf(path, year):
         if ma and cur_day:
             # Titre = texte après '>', sans le tag [..]
             title = clean(re.sub(r"\[.*?\]", "", ma.group(1)))
+            # Enrichit avec le sous-titre « Cours de … » s'il existe (ex. disco,
+            # country, charleston) pour distinguer des activités du même intitulé.
+            _blob_preview = " ".join(lines[i+1:i+4])
+            msub = re.search(r"Cours de(?:\s+danse)?\s*:?\s+([^\n]{2,50})", _blob_preview)
+            if msub:
+                sub = clean(msub.group(1))
+                # Coupe le texte standard qui suit le style ("Perfectionnement…")
+                sub = re.split(r"Perfectionnement|Initiation|D[ée]monstration|Venez|Lors|"
+                               r"dans le cadre|L['’]apprentissage", sub)[0]
+                sub = sub.strip(" .,–-:")[:30]
+                if sub and sub.lower() not in title.lower():
+                    title = f"{title} — {sub[:1].upper() + sub[1:]}"
             # Agrège les lignes suivantes jusqu'à la prochaine activité / jour
             block = [ma.group(1)]
             j = i + 1
@@ -149,7 +161,7 @@ def parse_pdf(path, year):
                 i = j; continue
 
             events.append({
-                "id": f"{slugify(title)}-{date:%Y-%m-%d}",
+                "id": f"{slugify(title)}-{date:%Y-%m-%d-%H%M}",   # heure incluse → id unique
                 "title": title[:90],
                 "category": infer_category(title + " " + desc),
                 "date": date.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -194,7 +206,21 @@ def main():
         path = tmp.name
 
     events, month_num = parse_pdf(path, args.year)
-    events.sort(key=lambda e: e["date"])
+
+    # Déduplication : on retire les entrées strictement identiques (même titre +
+    # même date/heure) et on garantit des id uniques.
+    seen, used_ids, deduped = set(), set(), []
+    for e in sorted(events, key=lambda e: e["date"]):
+        key = (e["title"], e["date"])
+        if key in seen:
+            continue
+        seen.add(key)
+        uid, n = e["id"], 2
+        while uid in used_ids:
+            uid = f"{e['id']}-{n}"; n += 1
+        used_ids.add(uid); e["id"] = uid
+        deduped.append(e)
+    events = deduped
 
     feed = {
         "city": args.city,

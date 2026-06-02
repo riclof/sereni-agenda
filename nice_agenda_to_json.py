@@ -180,7 +180,17 @@ def main():
     if path.startswith("http"):
         tmp = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False)
         print(f"Téléchargement {path} …")
-        urllib.request.urlretrieve(path, tmp.name)
+        # En-tête navigateur : beaucoup de sites (dont nice.fr) renvoient 403
+        # aux requêtes Python sans User-Agent.
+        req = urllib.request.Request(path, headers={
+            "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                           "AppleWebKit/537.36 (KHTML, like Gecko) "
+                           "Chrome/123.0 Safari/537.36"),
+            "Accept": "application/pdf,text/html,*/*",
+            "Accept-Language": "fr-FR,fr;q=0.9",
+        })
+        with urllib.request.urlopen(req, timeout=30) as resp, open(tmp.name, "wb") as f:
+            f.write(resp.read())
         path = tmp.name
 
     events, month_num = parse_pdf(path, args.year)

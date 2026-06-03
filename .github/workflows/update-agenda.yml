@@ -27,7 +27,10 @@ on:
         required: false
         default: ""
   schedule:
-    - cron: "0 6 1 * *"     # le 1er de chaque mois à 06:00 UTC
+    # Les 1er, 3 et 5 du mois à 06:00 UTC (≈ 8h en France l'été) : le PDF de Nice
+    # n'est pas toujours en ligne pile le 1er → plusieurs tentatives, sans risque
+    # de doublon grâce à la dédup et au contrôle du mois ci-dessous.
+    - cron: "0 6 1,3,5 * *"
 
 permissions:
   contents: write           # autorise le commit du JSON régénéré
@@ -60,16 +63,33 @@ jobs:
           fi
 
       - name: Générer le JSON
+        id: gen
         if: steps.src.outputs.skip != 'true'
         run: |
           YEAR="${{ github.event.inputs.year }}"
-          if [ -z "$YEAR" ]; then YEAR=$(date +%Y); fi
+          if [ -z "$YEAR" ]; then YEAR=$(date -u +%Y); fi
           python nice_agenda_to_json.py --pdf "${{ steps.src.outputs.pdf }}" --year "$YEAR" --out agenda-nice.json
           echo "----- aperçu -----"
           head -c 600 agenda-nice.json
+          echo ""
+
+          # Contrôle du mois. Run MANUEL → on publie toujours (confiance opérateur).
+          # Run PROGRAMMÉ → on ne publie que si le mois du JSON = mois courant,
+          # pour éviter de republier un ancien programme si le PDF n'a pas changé.
+          JSON_MONTH=$(python -c "import json;print(json.load(open('agenda-nice.json')).get('month',''))")
+          CUR_MONTH=$(date -u +%Y-%m)
+          echo "Mois du JSON : $JSON_MONTH | mois courant : $CUR_MONTH | déclencheur : ${{ github.event_name }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          elif [ "$JSON_MONTH" = "$CUR_MONTH" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "⏭  Run programmé + mois différent → publication ignorée (programme pas encore à jour)."
+          fi
 
       - name: Publier (commit + push)
-        if: steps.src.outputs.skip != 'true'
+        if: steps.gen.outputs.publish == 'true'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -77,6 +97,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "Aucun changement."
           else
-            git commit -m "Agenda automatique $(date +%Y-%m)"
+            git commit -m "Agenda automatique $(date -u +%Y-%m)"
             git push
           fi

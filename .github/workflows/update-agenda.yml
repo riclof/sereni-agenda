@@ -20,8 +20,9 @@ on:
   workflow_dispatch:
     inputs:
       pdf_url:
-        description: "URL du PDF du programme mensuel"
-        required: true
+        description: "URL du PDF (laisser vide = utiliser la variable NICE_PDF_URL, comme le run automatique)"
+        required: false
+        default: ""
       year:
         description: "Année (laisser vide = année courante)"
         required: false

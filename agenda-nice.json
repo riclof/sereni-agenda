@@ -1,6 +1,255 @@
 {
   "city": "Nice",
-  "month": "2026-09",
-  "updatedAt": "2026-09-05",
-  "events": []
+  "month": "2026-10",
+  "updatedAt": "2026-10-01",
+  "events": [
+    {
+      "id": "tous-au-cinema-2026-10-02-1330",
+      "title": "Tous au cinéma",
+      "category": "culture",
+      "date": "2026-10-02T13:30:00",
+      "location": "Cinéma Les Variétés : 5, boulevard Victor Hugo - Nice",
+      "description": "Tous au cinéma \" Digger \" : Action - Comédie Film réalisé par : Alejandro González Iñárritu avec Sabina Berman, Tom Cruise, Sandra Hüller, Riz Ahmed. L’homme le plus puissant au monde se lance dans une mission effrénée pour s'ériger en sauv"
+    },
+    {
+      "id": "danse-dans-les-jardins-m-2026-10-05-1030",
+      "title": "Danse dans les jardins — Moov’Dance",
+      "category": "sport",
+      "date": "2026-10-05T10:30:00",
+      "location": "Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc – Nice)",
+      "description": "Danse dans les jardins Cours de Moov’Dance Perfectionnement des nouvelles chorégraphies dans le cadre de démonstrations dans l’année. 10h30-12h : Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc – Nice)"
+    },
+    {
+      "id": "atelier-percussions-bres-2026-10-05-1600",
+      "title": "Atelier « Percussions brésiliennes »",
+      "category": "atelier",
+      "date": "2026-10-05T16:00:00",
+      "location": "Centre Animanice « Tour Gorbella » - 63 boulevard Gorbella - Nice",
+      "description": "Atelier « Percussions brésiliennes » Batucada L'apprentissage des percussions de la Batucada permet de pratiquer la musique d'une manière ludique. Lors des initiations aux percussions brésiliennes, les participants apprennent à jouer un des"
+    },
+    {
+      "id": "atelier-sante-sur-la-nut-2026-10-06-0930",
+      "title": "Atelier santé sur la nutrition",
+      "category": "sport",
+      "date": "2026-10-06T09:30:00",
+      "location": "14 avenue du Monastère - Nice",
+      "description": "Atelier santé sur la nutrition Maison des séniors - Cimiez Atelier Nutrition sur 5 sessions du 6 octobre au 10 novembre, pour sensibiliser les seniors à l'équilibre nutritionnel et la prévention santé. 9h30-12h : 14 avenue du Monastère - Ni"
+    },
+    {
+      "id": "danse-dans-les-jardins-c-2026-10-06-1000",
+      "title": "Danse dans les jardins — Country",
+      "category": "sport",
+      "date": "2026-10-06T10:00:00",
+      "location": "Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc – Nice)",
+      "description": "Danse dans les jardins Cours de Country Perfectionnement des nouvelles chorégraphies dans le cadre de démonstrations dans l’année. 10h-11h30 : Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc – Nice)"
+    },
+    {
+      "id": "presentation-de-l-associ-2026-10-06-1400",
+      "title": "Présentation de l’association EGEE « Entente des Générations pour l'Emploi et l'Education ",
+      "category": "culture",
+      "date": "2026-10-06T14:00:00",
+      "location": "OMNS - 19 rue Gioffredo - Nice",
+      "description": "Venez découvrir l’association « Entente des Générations pour l’Emploi et l’Éducation » (EGEE), première association de seniors bénévoles dédiée à l’emploi, à l’éducation et au bénévolat de compétences. En devenant acteur de la solidarité in"
+    },
+    {
+      "id": "bal-a-cimiez-2026-10-06-1430",
+      "title": "Bal à Cimiez",
+      "category": "social",
+      "date": "2026-10-06T14:30:00",
+      "location": "AnimaNice Cimiez - 49 avenue de la Marne - Nice",
+      "description": "Bal à Cimiez Animation musicale et dansante 14h30-16h30 : AnimaNice Cimiez - 49 avenue de la Marne - Nice Accès à la salle : fermeture des portes 15 mn avant le début du bal."
+    },
+    {
+      "id": "exposition-sur-le-bal-de-2026-10-07-1400",
+      "title": "Exposition sur le bal des abeilles",
+      "category": "social",
+      "date": "2026-10-07T14:00:00",
+      "location": "31 avenue de Castellane - Nice",
+      "description": "Exposition sur le bal des abeilles Maison de l’Environnement L'abeille, une pollinisatrice hors pair : partez à la découverte du monde de l’abeille; des ouvrières, du faux bourdon, de la reine, découvrez son anatomie et quels sont ses cousi"
+    },
+    {
+      "id": "le-spectacle-chinook-le-2026-10-08-1430",
+      "title": "Le spectacle Chinook, Le souffle des refrains",
+      "category": "culture",
+      "date": "2026-10-08T14:30:00",
+      "location": "Maioun du Rai - 10 boulevard Comte de Falicon - Nice",
+      "description": "Le spectacle Chinook, Le souffle des refrains Concert Chinook réunit six musiciens autour de chansons qui résonnent en chacun de nous. Avec \" Le Souffle des refrains \", le groupe propose un concert acoustique où chaque chanson trouve nature"
+    },
+    {
+      "id": "cours-de-dessin-aquarell-2026-10-09-1030",
+      "title": "Cours de dessin/aquarelle (en extérieur) — Dessin à main levée dans les q",
+      "category": "atelier",
+      "date": "2026-10-09T10:30:00",
+      "location": "Arrêt du tram « PORT LYMPIA » - Nice",
+      "description": "Cours de dessin/aquarelle (en extérieur) Cours de dessin à main levée dans les quartiers de la ville de Nice. Matériel à prévoir : Crayon à papier, gomme, feutre noir indélébile (résistant à l'eau), petite palette d'aquarelle, eau et récipi"
+    },
+    {
+      "id": "club-de-lecture-en-itali-2026-10-09-1030",
+      "title": "Club de Lecture en Italien",
+      "category": "culture",
+      "date": "2026-10-09T10:30:00",
+      "location": "12 rue Scaliero - Nice",
+      "description": "Club de Lecture en Italien Maison des seniors - Port république Autour de l'œuvre Marcovaldo ou les saisons en ville d'Italo Calvino, ce club de lecture en ITALIEN explorera la thématique de la vie urbaine à travers le regard poétique, sens"
+    },
+    {
+      "id": "visite-verrerie-de-biot-2026-10-09-1300",
+      "title": "Visite Verrerie de Biot",
+      "category": "atelier",
+      "date": "2026-10-09T13:00:00",
+      "location": "",
+      "description": "Visite Verrerie de Biot Visite privée et guidée La première verrerie biotoise, créée en 1956 sur l’impulsion d’Éloi Monod, présente aujourd’hui des ateliers, des galeries et une vaste boutique pour faire découvrir l’art verrier qui symbolis"
+    },
+    {
+      "id": "atelier-percussions-bres-2026-10-12-1600",
+      "title": "Atelier « Percussions brésilienne »",
+      "category": "atelier",
+      "date": "2026-10-12T16:00:00",
+      "location": "Centre Animanice « Tour Gorbella » - 63 boulevard Gorbella - Nice",
+      "description": "Atelier « Percussions brésilienne » Batucada L'apprentissage des percussions de la Batucada permet de pratiquer la musique d'une manière ludique. Lors des initiations aux percussions brésiliennes, les participants apprennent à jouer un des "
+    },
+    {
+      "id": "tous-au-cinema-2026-10-13-1000",
+      "title": "Tous au cinéma",
+      "category": "culture",
+      "date": "2026-10-13T10:00:00",
+      "location": "Cinéma PATHE Gare du Sud : 6 allée Philippe Seguin - Nice",
+      "description": "Tous au cinéma \" La maison de nos rêves \" : comédie Réalisé par : De Claude Zidi Jr. Avec Kev Adams, Chantal Ladesou, Camille Aguilar. Un jeune couple pense avoir enfin trouvé la solution miracle pour devenir propriétaire : Un Viager, une m"
+    },
+    {
+      "id": "reunion-d-information-mu-2026-10-13-1400",
+      "title": "Réunion d’information « Mutuelle Communale de Nice »",
+      "category": "social",
+      "date": "2026-10-13T14:00:00",
+      "location": "OMNS - 19 rue Gioffredo - Nice",
+      "description": "Réunion d’information « Mutuelle Communale de Nice » Un tarif maîtrisé et des garanties adaptées à vos besoins Découvrez la Mutuelle Communale de Nice, partenaire de la Ville de Nice et du CCAS. Accessible à tous, sans exclusion ni limite d"
+    },
+    {
+      "id": "karaoke-bal-au-casino-ru-2026-10-13-1430",
+      "title": "Karaoké/Bal au Casino Ruhl",
+      "category": "social",
+      "date": "2026-10-13T14:30:00",
+      "location": "1 Promenade des Anglais - Nice",
+      "description": "Karaoké/Bal au Casino Ruhl Grand bal/karaoké Animation musicale et dansante. 14h30-17h30 : 1 Promenade des Anglais - Nice Accès à la salle : fermeture des portes 15 mn avant le début du bal."
+    },
+    {
+      "id": "musee-national-du-sport-2026-10-14-1000",
+      "title": "Musée National du Sport",
+      "category": "culture",
+      "date": "2026-10-14T10:00:00",
+      "location": "6 Allée Camille Muffat – Nice Merci de vous présenter à l’extérieur du bâtiment 10 mn avant le début de la visite.",
+      "description": "Musée National du Sport Visite privée et guidée. Visite privée et guidée des expositions du musée. 10h : 6 Allée Camille Muffat – Nice Merci de vous présenter à l’extérieur du bâtiment 10 mn avant le début de la visite."
+    },
+    {
+      "id": "villa-ephrussi-de-rothsc-2026-10-15-0900",
+      "title": "Villa Ephrussi de Rothschild :",
+      "category": "culture",
+      "date": "2026-10-15T09:00:00",
+      "location": "",
+      "description": "Villa Ephrussi de Rothschild : Visite privée et guidée. Au cœur de la verdoyante presqu’île de Saint-Jean-Cap-Ferrat se dresse un somptueux édifice aux façades roses du début du XIX siècle, entouré de huit magnifiques jardins où il fait bon"
+    },
+    {
+      "id": "atelier-street-art-2026-10-15-1000",
+      "title": "Atelier « Street Art »",
+      "category": "atelier",
+      "date": "2026-10-15T10:00:00",
+      "location": "89 route de Turin - Nice",
+      "description": "Atelier « Street Art » ATELIER 109 WHOLE STREET Initiation graffiti avec utilisation de la bombe aérosol (maniement, tracé, emplissage…) sur un support éphémère ou sur un mur dédié. L’objectif de cet atelier découverte est de stimuler, au s"
+    },
+    {
+      "id": "danse-dans-les-jardins-d-2026-10-15-1000",
+      "title": "Danse dans les jardins — Du monde",
+      "category": "sport",
+      "date": "2026-10-15T10:00:00",
+      "location": "Promenade du Paillon rdv devant la tortue au jardin d’enfants, près du square Leclerc - Nice",
+      "description": "Danse dans les jardins Cours de danse du monde. Perfectionnement des nouvelles chorégraphies dans le cadre de démonstrations dans l’année. 10h-11h30 : Promenade du Paillon rdv devant la tortue au jardin d’enfants, près du square Leclerc - N"
+    },
+    {
+      "id": "atelier-de-sensibilisati-2026-10-15-1000",
+      "title": "Atelier de sensibilisation : Maison d’aide aux victimes",
+      "category": "atelier",
+      "date": "2026-10-15T10:00:00",
+      "location": "OMNS - 19 rue Gioffredo - Nice",
+      "description": "Atelier de sensibilisation : Maison d’aide aux victimes Atelier Afin d'adopter les bons comportements pour se protéger au quotidien. 10h-11h30 : OMNS - 19 rue Gioffredo - Nice"
+    },
+    {
+      "id": "cours-de-dessin-aquarell-2026-10-16-1030",
+      "title": "Cours de dessin/aquarelle (en extérieur) — Dessin à main levée dans les q",
+      "category": "atelier",
+      "date": "2026-10-16T10:30:00",
+      "location": "Monastère de cimiez - Place Pape Jean-Paul II – Nice",
+      "description": "Cours de dessin/aquarelle (en extérieur) Cours de dessin à main levée dans les quartiers de la ville de Nice. Matériel à prévoir : Crayon à papier, gomme, feutre noir indélébile (résistant à l'eau), petite palette d'aquarelle, eau et récipi"
+    },
+    {
+      "id": "danse-dans-les-jardins-m-2026-10-19-1030",
+      "title": "Danse dans les jardins — Moov’Dance",
+      "category": "sport",
+      "date": "2026-10-19T10:30:00",
+      "location": "Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc - Nice",
+      "description": "Danse dans les jardins Cours de Moov’Dance Perfectionnement des nouvelles chorégraphies dans le cadre de démonstrations dans l’année. 10h30-12h : Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc - Nice"
+    },
+    {
+      "id": "les-lundis-de-la-science-2026-10-19-1400",
+      "title": "Les lundis de la science : Conférence « Science pour Tous 06 »",
+      "category": "culture",
+      "date": "2026-10-19T14:00:00",
+      "location": "OMNS - 19 rue Gioffredo - Nice",
+      "description": "Les lundis de la science : Conférence « Science pour Tous 06 » Vers une agriculture durable : intérêt des légumineuses pour l’agriculture Invité : Renaud Brouquisse est directeur de recherche à l’Institut Sophia Agrobiotech (ISA) de l’INRAE"
+    },
+    {
+      "id": "danse-dans-les-jardins-c-2026-10-20-1000",
+      "title": "Danse dans les jardins — Country",
+      "category": "sport",
+      "date": "2026-10-20T10:00:00",
+      "location": "Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc - Nice",
+      "description": "Danse dans les jardins Cours de Country Perfectionnement des nouvelles chorégraphies dans le cadre de démonstrations dans l’année. 10h-11h30 : Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc - Nice"
+    },
+    {
+      "id": "reunion-d-information-tr-2026-10-22-1000",
+      "title": "Réunion d’information : « Trésor public »",
+      "category": "social",
+      "date": "2026-10-22T10:00:00",
+      "location": "OMNS - 19 rue Gioffredo - Nice",
+      "description": "Réunion d’information : « Trésor public » Thématique : « Information fiscales des particuliers » Proposée par Mme Corinne Lucot, inspectrice des Finances Publiques, qui abordera les principaux impôts et taxes qui concernent les particuliers"
+    },
+    {
+      "id": "bal-au-palais-de-la-medi-2026-10-22-1430",
+      "title": "Bal au Palais de la Méditerranée",
+      "category": "social",
+      "date": "2026-10-22T14:30:00",
+      "location": "15 Promenade des Anglais - Nice",
+      "description": "Bal au Palais de la Méditerranée Animation musicale et dansante. 14h30-16h30 : 15 Promenade des Anglais - Nice Accès à la salle : fermeture des portes 15 mn avant le début du bal."
+    },
+    {
+      "id": "initiation-aux-gestes-de-2026-10-23-0230",
+      "title": "Initiation aux gestes de premiers secours",
+      "category": "atelier",
+      "date": "2026-10-23T02:30:00",
+      "location": "12 rue Scaliero - Nice",
+      "description": "Initiation aux gestes de premiers secours Maison des seniors - Port république La Maison des seniors PORT-REPUBLIQUE vous propose un atelier d'une durée de 02h30 pour apprendre les réflexes essentiels pour réagir en cas d'urgence ! Une init"
+    },
+    {
+      "id": "randonnee-2026-10-28-0815",
+      "title": "Randonnée :",
+      "category": "sport",
+      "date": "2026-10-28T08:15:00",
+      "location": "départ en car de Nice - Rendez-vous devant l'arrêt de bus du lycée \"Masséna\" (avenue Félix Faure).",
+      "description": "Randonnée : Randonnée à la « Turbie - Col d'Eze » : Dénivelés négatif 350m / positif 250 m, 7km. Randonnée panoramique entre mer et montagne sur les hauteurs d'Eze et passage au fort de la Revère, avec toute l'histoire qui s'y rapporte. Mat"
+    },
+    {
+      "id": "danse-dans-les-jardins-d-2026-10-29-1000",
+      "title": "Danse dans les jardins — Du monde",
+      "category": "sport",
+      "date": "2026-10-29T10:00:00",
+      "location": "Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc - Nice",
+      "description": "Danse dans les jardins Cours de danse du monde Perfectionnement des nouvelles chorégraphies dans le cadre de démonstrations dans l’année. 10h-11h30 : Promenade du Paillon (rdv devant la tortue au jardin d’enfants, près du square Leclerc - N"
+    },
+    {
+      "id": "tous-au-cinema-2026-10-29-1330",
+      "title": "Tous au cinéma",
+      "category": "culture",
+      "date": "2026-10-29T13:30:00",
+      "location": "Cinéma MEGARAMA - Avenue François Mitterrand - Nice",
+      "description": "Tous au cinéma \" Le fantôme de l'opéra \" : Comédie musicale - fantastique Film réalisé par : Joel Schumacher, avec Gerard Butler, Emmy Rossum, Patrick Wilsone Au XIXe siècle, dans les fastes du Palais Garnier, l'Opéra de Paris, Christine, s"
+    }
+  ]
 }
